@@ -3,6 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 
-# 어드민페이지 테스트
+# test admin page
 def hello_world(request):
-    return HttpResponse('Admin Page Account Test')
+    return render(request, 'base.html')
