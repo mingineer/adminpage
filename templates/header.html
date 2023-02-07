@@ -9,6 +9,9 @@
             <span class="header_button">Login</span>
         </a>
         {% else %}
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <span class="header_button">MyPage</span>
+        </a>
         <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span class="header_button">Logout</span>
         </a>
