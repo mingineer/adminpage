@@ -18,11 +18,11 @@
             <span class="header_button">MyPage</span>
         </a>
 
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span class="header_button">Logout</span>
         </a>
 
-        <a href="{% url 'accountapp:hello_world' %}">
+        <a href="{% url 'accountapp:hello_world' %}?next={{ request.path }}">
             <span class="header_button">Home</span>
         </a>
 
