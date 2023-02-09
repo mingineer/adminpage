@@ -8,13 +8,20 @@
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
             <span class="header_button">Login</span>
         </a>
+
+        <a href="{% url 'accountapp:create' %}">
+            <span class="header_button">SignUp</span>
+        </a>
+
         {% else %}
         <a href="{% url 'accountapp:detail' pk=user.pk %}">
             <span class="header_button">MyPage</span>
         </a>
+
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
             <span class="header_button">Logout</span>
         </a>
+
         <a href="{% url 'accountapp:hello_world' %}">
             <span class="header_button">Home</span>
         </a>
