@@ -4,6 +4,8 @@
     </div>
     <div style="margin: 2rem;">
 
+
+
         {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
             <span class="header_button">Login</span>
@@ -14,6 +16,7 @@
         </a>
 
         {% else %}
+
         <a href="{% url 'accountapp:detail' pk=user.pk %}">
             <span class="header_button">MyPage</span>
         </a>
@@ -26,6 +29,9 @@
             <span class="header_button">Home</span>
         </a>
 
+        <a href="{% url 'articleapp:list' %}">
+            <span class="header_button">기능</span>
+        </a>
         {% endif %}
 
     </div>
