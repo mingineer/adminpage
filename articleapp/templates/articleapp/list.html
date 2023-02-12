@@ -4,7 +4,7 @@
 
 <style>
   .container div {
-    width: 250px;
+    width: 200px;
     height: 200px;
     background-color: antiquewhite;
     display: flex;
@@ -19,21 +19,53 @@
   }
 </style>
 
+    {% if article_list %}
     <div class="container">
-      <div class="item1">Jeus점검</div>
-      <div class="item2">WebtoB점검</div>
-      <div class="item3">Tomcat설치</div>
-      <div class="item4">패스워드변경</div>
-      <div class="item5">
-          <img src="https://picsum.photos/200/160" alt="">
-      </div>
+        {% for article in article_list %}
+          <a href="{% url 'articleapp:detail' pk=article.pk %}">
+              {%  include 'snippets/card.html' with article=article %}
+          </a>
+        {% endfor %}
+
+        <!--image-->
+        <div class="item5" style="text-align: center;">
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
+        <div class="item5" style="text-align: center;">
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
+        <div class="item5" style="text-align: center;">
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
+        <div class="item5" style="text-align: center;">
+            <img src="https://picsum.photos/200/200" alt="">
+        </div>
     </div>
+
+    <script src="{% static 'js/magicgrid.js' %}"></script>
+    {% else %}
+    <div style="text-align: center;">
+        <h1> No Article YET !</h1>
+    </div>
+    {% endif %}
+
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+
+<!--
+    <div class="item1" style="text-align: center;">Jeus점검</div>
+    <div class="item2" style="text-align: center;">WebtoB점검</div>
+    <div class="item3" style="text-align: center;">Tomcat설치</div>
+    <div class="item4" style="text-align: center;">패스워드변경</div>
+    <div class="item5" style="text-align: center;">
+      <img src="https://picsum.photos/200/160" alt="">
+    </div>-->
+
 
 <div style="text-align: center;">
     <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
         자동화 스크립트 생성
     </a>
 </div>
-<script src="{% static 'js/magicgrid.js' %}"></script>
+
 {% endblock %}
 
