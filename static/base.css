@@ -25,3 +25,9 @@
 .header_button {
     margin-right: 2rem;
 }
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 13px;
+    }
+}

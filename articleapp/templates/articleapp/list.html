@@ -3,16 +3,37 @@
 {% block content %}
 
 <style>
-  .container div {
+
+  .container {
+    padding: 0;
+    margin: 0, auto;
+  }
+
+  .container a {
+    width: 42%;
+    max-width: 250px;
+  }
+
+<!--  .container div {
     width: 200px;
     height: 200px;
-    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     border-radius: 1rem;
+  }-->
+
+  .container div {
+    width: 180px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
   }
+
   .container img {
   width: 100%;
   border-radius: 1rem;
@@ -62,7 +83,7 @@
 
 
 <div style="text-align: center;">
-    <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill col-3 mt-3 mb-3">
+    <a href="{% url 'articleapp:create' %}" class="btn btn-dark rounded-pill mt-3 mb-3 px-2">
         자동화 스크립트 생성
     </a>
 </div>
