@@ -1,3 +1,5 @@
+import os
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
@@ -35,9 +37,11 @@ class ArticleDetailView(DetailView, FormMixin):
     template_name = 'articleapp/detail.html'
 
 
+
 @method_decorator(article_ownership_required, 'get')
 @method_decorator(article_ownership_required, 'post')
 class ArticleUpdateView(UpdateView):
+
     model = Article
     context_object_name = 'target_article'
     form_class = ArticleCreationForm
